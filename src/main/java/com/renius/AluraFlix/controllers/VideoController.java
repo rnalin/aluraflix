@@ -3,6 +3,8 @@ package com.renius.AluraFlix.controllers;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -36,7 +38,7 @@ public class VideoController {
 		return ResponseEntity.ok().body(video);
 	}
 	@PostMapping("video/insert")
-	public ResponseEntity<Void> insert(@RequestBody Video video){
+	public ResponseEntity<Void> insert(@Valid @RequestBody Video video){
 		video = services.insert(video);
 		URI uri = ServletUriComponentsBuilder
 				.fromCurrentRequest()
@@ -47,7 +49,7 @@ public class VideoController {
 	}
 	
 	@PutMapping("video/{id}")
-	public ResponseEntity<Void> update(@RequestBody Video video, @PathVariable Integer id){
+	public ResponseEntity<Void> update(@Valid @RequestBody Video video, @PathVariable Integer id){
 		video.setId(id);
 		video = services.update(video);
 		return ResponseEntity.noContent().build();

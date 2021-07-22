@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Video implements Serializable {
@@ -13,8 +14,11 @@ public class Video implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@NotEmpty(message = "Por favor, informe o título do vídeo.")
 	private String titulo;
+	@NotEmpty(message = "Por favor, informe a descrição do vídeo.")
 	private String descricao;
+	@NotEmpty(message = "Por favor, informe o link do vídeo.")
 	private String url;
 	
 	public Video() {}
