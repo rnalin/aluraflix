@@ -2,14 +2,16 @@ package com.renius.AluraFlix.domain;
 
 import java.io.Serializable;
 
-public class VideoDomain implements Serializable {
+public class Video implements Serializable {
 	private static final long serialVersionUID = 1L;
 	Integer id;
-	String titulo, descricao, url;
+	String titulo;
+	String descricao;
+	String url;
 	
-	public VideoDomain() {}
+	public Video() {}
 	
-	public VideoDomain(Integer id, String titulo, String descricao, String url) {
+	public Video(Integer id, String titulo, String descricao, String url) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -65,7 +67,7 @@ public class VideoDomain implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		VideoDomain other = (VideoDomain) obj;
+		Video other = (Video) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
