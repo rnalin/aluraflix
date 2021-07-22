@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.renius.AluraFlix.domain.Video;
+import com.renius.AluraFlix.model.Video;
 import com.renius.AluraFlix.repositories.VideoRepository;
 
 @Service
