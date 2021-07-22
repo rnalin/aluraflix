@@ -31,7 +31,14 @@ public class VideoServices {
 	}
 
 	public Video update(Video video) {
-		
 		return repository.save(video);
+	}
+
+	public void delete(Integer id) {
+		try {
+			repository.deleteById(id);
+		} catch (Exception badException) {
+		}
+		
 	}
 }
