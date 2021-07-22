@@ -20,6 +20,5 @@ public class VideoController {
 	public ResponseEntity<?> buscarVideoPorId(@PathVariable Integer id) {
 		Video obj = service.findVideoById(id);
 		return ResponseEntity.ok().body(obj);
-		
 	}
 }

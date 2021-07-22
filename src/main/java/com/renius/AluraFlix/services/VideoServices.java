@@ -1,5 +1,6 @@
 package com.renius.AluraFlix.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,5 +17,10 @@ public class VideoServices {
 	public Video findVideoById(Integer id) {
 		Optional<Video> obj = repository.findById(id);
 		return obj.orElse(null);
+	}
+	
+	public List<Video> findAllVideos() {
+		Optional<List<Video>> videosList = Optional.of(repository.findAll());
+		return videosList.orElse(null);
 	}
 }
