@@ -14,13 +14,24 @@ public class VideoServices {
 	@Autowired
 	public VideoRepository repository;
 	
-	public Video findVideoById(Integer id) {
-		Optional<Video> obj = repository.findById(id);
-		return obj.orElse(null);
+	public Video findOne(Integer id) {
+		Optional<Video> video = repository.findById(id);
+		
+		return video.orElse(null);
 	}
 	
-	public List<Video> findAllVideos() {
+	public List<Video> find() {
 		Optional<List<Video>> videosList = Optional.of(repository.findAll());
 		return videosList.orElse(null);
+	}
+
+	public Video insert(Video video) {
+		video.setId(null);
+		return repository.save(video);
+	}
+
+	public Video update(Video video) {
+		
+		return repository.save(video);
 	}
 }
