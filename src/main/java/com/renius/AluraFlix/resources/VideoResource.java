@@ -14,8 +14,8 @@ import com.renius.AluraFlix.domain.Video;
 public class VideoResource {
 	@GetMapping
 	public List<Video> listarVideos() {
-		Video video1 = new Video(1, "video1", "descricao1", "url1");
-		Video video2 = new Video(2, "video2", "descricao2", "url2");
+		Video video1 = new Video(1, "v1", "d1", "1");
+		Video video2 = new Video(2, "v2", "d2", "2");
 		
 		List<Video> listaVideos = new ArrayList<>();
 		
